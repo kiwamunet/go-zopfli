@@ -13,7 +13,7 @@ import (
 
 	"time"
 
-	"github.com/kiwamunet/zopflipng/binding"
+	"github.com/kiwamunet/go-zopfli/binding"
 )
 
 const (
