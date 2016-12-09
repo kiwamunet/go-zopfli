@@ -1,5 +1,7 @@
 package main
 
+//go:generate make -f Makefile
+
 import (
 	"crypto/rand"
 	"encoding/binary"
@@ -11,12 +13,12 @@ import (
 
 	"time"
 
-	"github.com/hayabusa/samples/zopflipng/binding"
+	"github.com/kiwamunet/zopflipng/binding"
 )
 
 const (
-	srcPath = "zopflipng/input/demo.png"
-	dirPath = "zopflipng/output/"
+	srcPath = "input/demo.png"
+	dirPath = "output/"
 )
 
 func main() {

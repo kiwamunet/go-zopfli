@@ -1,8 +1,8 @@
 package binding
 
 /*
-#cgo LDFLAGS: -L${SRCDIR}/../libs -lzopflipng -lstdc++
-#include "../libs/zopfli/src/zopflipng/zopflipng_lib.h"
+#cgo LDFLAGS: -L${SRCDIR}/../vendor -lzopflipng -lstdc++
+#include "../vendor/zopflipng_lib.h"
 #include "bridge_zopflipng.h"
 */
 import "C"
