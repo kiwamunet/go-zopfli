@@ -17,8 +17,8 @@ import (
 )
 
 const (
-	srcPath = "input/demo.png"
-	dirPath = "output/"
+	srcPath = "testdata/demo.png"
+	dirPath = "testdata/"
 )
 
 func main() {
