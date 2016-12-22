@@ -1,4 +1,4 @@
-package binding
+package zopfli
 
 import (
 	"io/ioutil"

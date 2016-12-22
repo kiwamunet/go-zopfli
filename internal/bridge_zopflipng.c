@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../vendor/zopflipng_lib.h"
+#include "bridge_zopflipng.h"
+
 
 void setfilters(CZopfliPNGOptions* png_options, int size, int* filters) {
     int* ptr = malloc(sizeof(int*)*size);

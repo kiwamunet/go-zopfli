@@ -1,7 +1,5 @@
 package main
 
-//go:generate make -f Makefile
-
 import (
 	"crypto/rand"
 	"encoding/binary"
@@ -13,7 +11,7 @@ import (
 
 	"time"
 
-	"github.com/kiwamunet/go-zopfli/binding"
+	"github.com/kiwamunet/go-zopfli"
 )
 
 const (
@@ -34,19 +32,20 @@ func main() {
 	start := time.Now()
 	log.Println("ZopfliPng Starting .....")
 
-	z := &binding.ZopfliPng{}
+	z := &zopfli.ZopfliPng{}
 
 	// ------ zopfli pram settings ------
 	z.Src = b
 	z.Opt.Lossy8bit = false
-	z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, binding.StrategyOne)
-	z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, binding.StrategyTwo)
-	z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, binding.StrategyThree)
+	z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, zopfli.StrategyOne)
+	z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, zopfli.StrategyTwo)
+	z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, zopfli.StrategyThree)
 	z.Opt.NumIterations = 14
+	z.Opt.NumIterationsLarge = 5
 	z.Opt.Keepchunks = append(z.Opt.Keepchunks, "iCCP")
 	// ------ zopfli pram settings ------
 
-	var e binding.Error
+	var e zopfli.Error
 	b, e = z.ZopfliPng()
 
 	if e.Code != 0 {

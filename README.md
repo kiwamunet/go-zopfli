@@ -8,24 +8,23 @@ Go go-zopfli is a Go bind to [google/zopfli](https://github.com/google/zopfli).
 
 ```
 go get github.com/kiwamunet/go-zopfli
-go generate
 ```
 
 # Use
 
 ```
-z := &binding.ZopfliPng{}
+z := &zopfli.ZopfliPng{}
 
 // ------ zopfli pram settings ------
 z.Src = b
 z.Opt.Lossy8bit = false
-z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, binding.StrategyOne)
+z.Opt.FilterStrategies = append(z.Opt.FilterStrategies, zopfli.StrategyOne)
 z.Opt.NumIterations = 14
 z.Opt.NumIterationsLarge = 5
 z.Opt.Keepchunks = append(z.Opt.Keepchunks, "iCCP")
 // ------ zopfli pram settings ------
 
-var e binding.Error
+var e zopfli.Error
 b, e = z.ZopfliPng()
 if e.Code != 0 {
 	log.Printf("Error::: Code: %d / Desc: %s", e.Code, e.Description)

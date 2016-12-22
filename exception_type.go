@@ -1,9 +1,10 @@
-package binding
+package zopfli
 
 import "C"
 import "fmt"
 
 type errorCode C.int
+
 var exceptionTypeStrings = map[errorCode]string{
 	0:  "no error, everything went ok",
 	1:  "nothing done yet",
